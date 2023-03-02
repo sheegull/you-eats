@@ -6,6 +6,8 @@ import { SlMenu } from "react-icons/sl";
 import { IoIosSearch } from "react-icons/io";
 import { RiVideoAddLine } from "react-icons/ri";
 import { FiBell } from "react-icons/fi";
+// import avatar from "../assets/avatar.png";
+import avatar from "../assets/shee-logo.png";
 
 import { Context } from "../context/contextApi";
 import Loader from "../shared/Loader";
@@ -77,8 +79,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex">
-          {/* add avatar-image !! */}
-          <img src="" alt="avatar" />
+          <img src={avatar} alt="avatar" />
         </div>
       </div>
     </div>
