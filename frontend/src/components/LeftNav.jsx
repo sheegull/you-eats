@@ -24,8 +24,12 @@ const LeftNav = () => {
   };
 
   return (
-    <div className="h-full">
-      <div className="flex">
+    <div
+      className={`h-full w-[240px] overflow-y-auto py-4 md:block bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
+        mobileMenu ? "translate-x-0" : ""
+      }`}
+    >
+      <div className="flex py-5 flex-col">
         {categories.map((item, idx) => {
           return (
             <React.Fragment key={idx}>
