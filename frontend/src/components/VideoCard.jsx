@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { abbreviateNumber } from "js-abbreviation-number";
+
 import VideoLength from "../shared/VideoLength";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const VideoCard = ({ video }) => {
   return (
@@ -24,9 +27,21 @@ const VideoCard = ({ video }) => {
               />
             </div>
           </div>
-          <div className="flex">
-            <span className="text-sm text-white">{video?.title}</span>
-            <span className="text-[12px]">{video?.author?.title}</span>
+          <div className="flex flex-col ml-3 overflow-hidden">
+            <span className="text-sm font-bold line-clamp-2 text-white">{video?.title}</span>
+            <span className="text-[12px] font-semibold mt-2 text-white/[0.7] flex items-center">
+              {video?.author?.title}
+              {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
+                <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
+              )}
+            </span>
+            <div className="flex text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden">
+              <span className={`${abbreviateNumber(video?.stats?.views, 2)} views`}></span>
+              <span className="flex text-[24px] leading-none font-bold text-white/[0.7] relative top-[-10px] mx-1">
+                .
+              </span>
+              <span className="truncate">{video?.publishedTimeText}</span>
+            </div>
           </div>
         </div>
       </div>
