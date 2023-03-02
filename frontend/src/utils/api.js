@@ -7,7 +7,7 @@ const options = {
   url: BASE_URL,
   params: { q: "desp", hl: "en", gl: "US" },
   headers: {
-    "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
+    "X-RapidAPI-Key": import.meta.env.VITE_APP_RAPID_API_KEY,
     "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
   },
 };
