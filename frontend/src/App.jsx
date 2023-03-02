@@ -12,7 +12,7 @@ function App() {
   return (
     <ContextApi>
       <BrowserRouter>
-        <div className="flex">
+        <div className="flex flex-col h-full">
           <Header />
           <Routes>
             <Route path="/" exact element={<Feed />}></Route>
